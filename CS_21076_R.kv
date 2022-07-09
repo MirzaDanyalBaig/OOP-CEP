@@ -1,0 +1,253 @@
+ProductWindow:
+
+
+<ProductWindow>:
+    name: "product"
+
+    canvas.before:
+        Color:
+            rgba: .9, .9, .9, .3
+        Rectangle:
+            size: self.size
+
+    MDGridLayout:
+        cols: 1
+
+        MDBoxLayout:
+            orientation: "horizontal"
+
+            AnchorLayout:
+                anchor_x: "left"
+                anchor_y: "top"
+
+                MDIconButton:
+                    id: product_back_icon_button
+                    icon: "arrow-left"
+
+            AnchorLayout:
+                anchor_x: "center"
+                anchor_y: "top"
+
+                MDTextField:
+                    id: product_search_textfield
+                    hint_text: "Search the product here"
+
+            AnchorLayout:
+                anchor_x: "right"
+                anchor_y: "top"
+
+                MDBoxLayout:
+                    adaptive_size: True
+
+                    MDIconButton:
+                        id: product_magnify_icon_button
+                        icon: "magnify"
+
+                    MDIconButton:
+                        id: product_account_icon_button
+                        icon: "account"
+
+        MDBoxLayout:
+            size_hint_y: None
+            height: dp(55)
+            padding: dp(20)
+            spacing: dp(20)
+            TabCard:
+                icon: "laptop"
+                text: "Laptops"
+            TabCard:
+                icon: "cellphone"
+                text: "Cellphones"
+            TabCard:
+                icon: "headphones"
+                text: "Headphones"
+
+        ScrollView:
+            MDGridLayout:
+                cols: 3
+                padding: dp(20)
+                spacing: dp(20)
+                ElementCard:
+                    image: "L1.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L2.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L3.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L4.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L5.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L6.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L7.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L8.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L9.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+
+
+
+<TabCard@MDCard>:
+    icon: ""
+    text: ""
+    size_hint_y: None
+    height: dp(55)
+    radius: dp(15)
+    MDIconButton:
+        icon: root.icon
+    MDLabel:
+        text: root.text
+
+
+<ElementCard@MDCard>:
+    image: ""
+    rate: ""
+    price: ""
+    orientation: "vertical"
+    size_hint_x: .5
+    size_hint_y: None
+    height: dp(65)
+    Image:
+        source: root.image
+    MDBoxLayout:
+        MDIcon:
+            icon: "star"
+        MDLabel:
+            text: root.rate
+    MDLabel:
+        text: root.price
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MDBoxLayout:
+            size_hint_y: None
+            padding: dp(20)
+            spacing: dp(20)
+            TabCard:
+                icon: "laptop"
+                text: "Laptops"
+            TabCard:
+                icon: "cellphone"
+                text: "Cellphones"
+            TabCard:
+                icon: "headphones"
+                text: "Headphones"
+
+        MDBoxLayout:
+            ScrollView:
+                MDGridLayout:
+                    cols: 3
+                    padding: dp(20)
+                    spacing: dp(20)
+                    adaptive_height: True
+                    ElementCard:
+                        image: "L1.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+                    ElementCard:
+                        image: "L2.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+                    ElementCard:
+                        image: "L3.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+                    ElementCard:
+                        image: "L4.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+                    ElementCard:
+                        image: "L5.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+                    ElementCard:
+                        image: "L6.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+                    ElementCard:
+                        image: "L7.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+                    ElementCard:
+                        image: "L8.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+                    ElementCard:
+                        image: "L9.jpg"
+                        price: "1200 Rupees"
+                        rate: "3.5 / 5"
+
+
+
+<TabCard@MDCard>:
+    icon: ""
+    text: ""
+    size_hint_y: None
+    height: dp(55)
+    radius: dp(15)
+    MDIconButton:
+        icon: root.icon
+    MDLabel:
+        text: root.text
+
+
+<ElementCard@MDCard>:
+    image: ""
+    rate: ""
+    price: ""
+    orientation: "vertical"
+    size_hint_x: .5
+    size_hint_y: None
+    height: dp(150)
+    Image:
+        source: root.image
+    MDBoxLayout:
+        MDIcon:
+            icon: "star"
+        MDLabel:
+            text: root.rate
+    MDLabel:
+        text: root.price

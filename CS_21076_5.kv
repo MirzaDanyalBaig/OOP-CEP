@@ -1,0 +1,237 @@
+ProductWindow:
+
+
+<ProductWindow>:
+    name: "product"
+
+    canvas.before:
+        Color:
+            rgba: .9, .9, .9, .3
+        Rectangle:
+            size: self.size
+
+    MDGridLayout:
+        cols: 1
+        padding: dp(5)
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, .07
+
+            AnchorLayout:
+                anchor_x: "left"
+                anchor_y: "top"
+
+                MDIconButton:
+                    id: product_back_icon_button
+                    icon: "arrow-left"
+
+            AnchorLayout:
+                anchor_x: "center"
+                anchor_y: "top"
+
+                MDTextField:
+                    id: product_search_textfield
+                    hint_text: "Search the product here"
+
+            AnchorLayout:
+                anchor_x: "right"
+                anchor_y: "top"
+
+                MDBoxLayout:
+                    adaptive_size: True
+
+                    MDIconButton:
+                        id: product_magnify_icon_button
+                        icon: "magnify"
+
+                    MDIconButton:
+                        id: product_account_icon_button
+                        icon: "account"
+
+        MDGridLayout:
+            cols: 3
+            spacing: dp(20)
+            padding: dp(20)
+            size_hint: 1, .12
+            TabCard:
+                icon: "laptop"
+                text: "Laptops"
+                font_name: "time_new_romans.ttf"
+                font_size: 18
+            TabCard:
+                icon: "cellphone"
+                text: "Cellphones"
+                font_name: "time_new_romans.ttf"
+                font_size: 18
+            TabCard:
+                icon: "headphones"
+                text: "Headphones"
+                font_name: "time_new_romans.ttf"
+                font_size: 20
+
+        ScrollView:
+            size_hint: 1, .7
+            MDGridLayout:
+                cols: 3
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(20)
+                padding: dp(20)
+                ElementCard:
+                    image: "L1.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L2.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L3.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L4.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L5.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L6.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L7.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L8.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L9.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L10.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L11.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L12.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L13.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L14.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+                ElementCard:
+                    image: "L15.jpg"
+                    price: "1200 Rupees"
+                    rate: "3.5 / 5"
+
+<ContentCustomSheet@MDBoxLayout>:
+    orientation: "vertical"
+    size_hint_y: None
+    height: dp(500)
+    image: ""
+    rate: ""
+    price: ""
+    label: ""
+    RelativeLayout:
+        ElementCard:
+            pos_hint: {"x": .05, "center_y": 1}
+            image: root.image
+            price: root.price
+            rate: root.rate
+    ScrollView:
+        size_hint: 1, .8
+        MDLabel:
+            pos_hint: {"center_x": .5, "center_y": .3}
+            padding: (dp(10), dp(0))
+            size_hint_y: None
+            height: self.height
+            text: root.label
+
+    MDBoxLayout:
+        size_hint: 1, .2
+        MDIconButton:
+            icon: "plus"
+            pos_hint: {"center_x": .5, "center_y": .2}
+            size_hint: 1, .1
+        MDLabel:
+            text: "1"
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .2}
+            size_hint: 1, .1
+        MDIconButton:
+            icon: "minus"
+            pos_hint: {"center_x": .5, "center_y": .2}
+            size_hint: 1, .1
+
+    MDBoxLayout:
+        padding: dp(20)
+        spacing: dp(20)
+        MDRoundFlatIconButton:
+            icon: "cart"
+            text: "Add to Cart"
+            size_hint_x: None
+            width: dp(200)
+
+
+<TabCard@MDCard>:
+    icon: ""
+    text: ""
+    focus_behavior: True
+    size_hint_y: None
+    height: dp(55)
+    radius: dp(15)
+    MDIconButton:
+        icon: root.icon
+    MDLabel:
+        text: root.text
+        font_name: "time_new_romans.ttf"
+        font_size: 24
+
+
+<ElementCard>:
+    image: ""
+    price: ""
+    rate: ""
+    focus_behavior: True
+    orientation: "vertical"
+    on_release: root.bottom_sheet(root.image, root.price, root.rate, root.label)
+    size_hint_x: .5
+    size_hint_y: None
+    height: dp(250)
+    padding: dp(15)
+    radius: dp(25)
+    Image:
+        source: root.image
+        size_hint_y: None
+        height: dp(150)
+    MDBoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        size_hint_x: .35
+        height: dp(45)
+        MDIcon:
+            icon: "star"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 0, 1
+        MDLabel:
+            text: root.rate
+            font_name: "time_new_romans.ttf"
+            font_size: 20
+    MDLabel:
+        text: root.price
+        font_name: "time_new_romans.ttf"
+        font_size: 20

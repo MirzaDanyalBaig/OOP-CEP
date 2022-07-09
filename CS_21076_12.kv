@@ -1,0 +1,18 @@
+AdminProfileWindow:
+
+
+<AdminProfileWindow>:
+    grids: grids
+    ScrollView:
+        MDGridLayout:
+            cols: 1
+            padding: dp(20)
+            spacing: dp(20)
+            row_force_default: True
+            row_default_height: 40
+            size_hint_y: None
+            height: self.minimum_height
+            id: grids
+            MDLabel:
+                text: "Administrator Profile"
+                halign: "center"
